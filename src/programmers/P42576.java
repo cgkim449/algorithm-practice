@@ -1,6 +1,8 @@
+package programmers;
+
 import java.util.HashMap;
 
-public class Solution {
+public class P42576 {
     public static void main(String[] args) {
         String[] participant = {"mislav", "stanko", "mislav", "ana"};
         String[] completion = {"stanko", "ana", "mislav"};

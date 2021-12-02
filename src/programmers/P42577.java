@@ -1,8 +1,10 @@
+package programmers;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Solution {
+public class P42577 {
     public static void main(String[] args) {
 
         String[] s = {"119", "97674223", "1195524421"};
@@ -17,7 +19,8 @@ public class Solution {
 
         Set<String> set = new HashSet<>(Arrays.asList(phone_book));
 
-        loop: for (String s : phone_book) {
+        loop:
+        for (String s : phone_book) {
             for (int j = 0; j < s.length(); j++) {
                 if (set.contains(s.substring(0, j))) {
                     answer = false;

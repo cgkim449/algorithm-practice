@@ -1,10 +1,12 @@
+package baekjoon;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main {
+public class B10828 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -37,22 +39,20 @@ class MyStack {
         stack = new int[length];
     }
 
-    public int top() { 
-        return empty() == 1 ? -1 : stack[size - 1]; 
-    }
-    
+    public int top() { return empty() == 1 ? -1 : stack[size - 1]; }
+
     public int size() {
         return size;
     }
-    
+
     public int empty() {
         return size == 0 ? 1 : 0;
     }
-    
+
     public int pop() {
         return empty() == 1 ? -1 : stack[size-- - 1];
     }
-    
+
     public void push(int n) {
         stack[size++] = n;
     }

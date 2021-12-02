@@ -1,3 +1,5 @@
+package baekjoon;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -11,7 +13,7 @@ import java.util.PriorityQueue;
  * Date: 2021-12-02
  * Time: 09:45
  */
-public class Main {
+public class B1302 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
