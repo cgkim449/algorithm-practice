@@ -11,8 +11,9 @@ import java.util.Stack;
  * Created by cgkim449
  * Date: 2021-12-02
  * Time: 18:07
+ * https://www.acmicpc.net/problem/4889
  */
-public class B4889 {
+public class Stack4889 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

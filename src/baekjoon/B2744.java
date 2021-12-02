@@ -11,6 +11,7 @@ import java.util.StringTokenizer;
  * Created by cgkim449
  * Date: 2021-12-01
  * Time: 18:48
+ * https://www.acmicpc.net/problem/2744
  */
 public class B2744 {
     public static void main(String[] args) throws IOException {

@@ -13,8 +13,9 @@ import java.util.StringTokenizer;
  * Created by cgkim449
  * Date: 2021-12-02
  * Time: 13:03
+ * https://www.acmicpc.net/problem/17219
  */
-public class B17219 {
+public class Hash17219 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

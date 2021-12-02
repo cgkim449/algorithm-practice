@@ -10,8 +10,9 @@ import java.util.Set;
  * Created by cgkim449
  * Date: 2021-12-02
  * Time: 15:13
+ * https://www.acmicpc.net/problem/2002
  */
-public class B2002 {
+public class Hash2002 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

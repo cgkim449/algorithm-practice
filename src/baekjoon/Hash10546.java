@@ -9,8 +9,9 @@ import java.util.HashMap;
  * Created by cgkim449
  * Date: 2021-12-01
  * Time: 19:30
+ * https://www.acmicpc.net/problem/10546
  */
-public class B10546 {
+public class Hash10546 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

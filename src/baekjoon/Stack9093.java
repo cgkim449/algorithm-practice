@@ -8,11 +8,9 @@ import java.io.OutputStreamWriter;
 import java.util.Stack;
 
 /**
- * Created by cgkim449
- * Date: 2021-12-02
- * Time: 17:47
+ * https://www.acmicpc.net/problem/9093
  */
-public class B3986 {
+public class Stack9093 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -21,30 +19,24 @@ public class B3986 {
 
         int n = Integer.parseInt(br.readLine());
 
-        int count = 0;
-
         while(n-- > 0) {
-            char[] chars = br.readLine().toCharArray();
+            char[] chars = (br.readLine() + " ").toCharArray();
             Stack<Character> stack = new Stack<>();
 
             for (char c : chars) {
-                if (!stack.isEmpty()) {
-                    if (stack.peek() == c) {
-                        stack.pop();
-                    } else {
-                        stack.push(c);
+                if (c == ' ') {
+                    while (!stack.empty()) {
+                        sb.append(stack.pop());
                     }
-                } else {
-                    stack.push(c);
+                    sb.append(" ");
+                    continue;
                 }
+                stack.push(c);
             }
-
-            if(stack.empty()) {
-                count++;
-            }
+            sb.append("\n");
         }
-        System.out.println(count);
-        br.close();
+        bw.write(sb.toString());
         bw.close();
+        br.close();
     }
 }

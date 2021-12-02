@@ -10,6 +10,7 @@ import java.io.OutputStreamWriter;
  * Created by cgkim449
  * Date: 20211202
  * Time: 18:35
+ * https://www.acmicpc.net/problem/1254
  */
 public class B1254 {
     public static void main(String[] args) throws IOException {

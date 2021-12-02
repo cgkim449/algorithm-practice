@@ -14,8 +14,9 @@ import java.util.StringTokenizer;
  * Created by cgkim449
  * Date: 2021-12-02
  * Time: 14:50
+ * https://www.acmicpc.net/problem/16165
  */
-public class B16165 {
+public class Hash16165 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

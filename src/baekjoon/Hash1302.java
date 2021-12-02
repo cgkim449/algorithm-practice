@@ -12,8 +12,9 @@ import java.util.PriorityQueue;
  * Created by cgkim449
  * Date: 2021-12-02
  * Time: 09:45
+ * https://www.acmicpc.net/problem/1302
  */
-public class B1302 {
+public class Hash1302 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

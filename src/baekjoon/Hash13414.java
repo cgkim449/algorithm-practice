@@ -5,11 +5,16 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedHashSet;
 import java.util.StringTokenizer;
 
-public class B1620 {
+/**
+ * Created by cgkim449
+ * Date: 2021-12-02
+ * Time: 13:14
+ * https://www.acmicpc.net/problem/13414
+ */
+public class Hash13414 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -19,23 +24,24 @@ public class B1620 {
 
         st = new StringTokenizer(br.readLine(), " ");
 
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
+        int l = Integer.parseInt(st.nextToken());
 
-        Map<String, String> map = new HashMap<>();
+        LinkedHashSet<String> hs = new LinkedHashSet<>();
 
-        for (int i = 1; i <= n; i++) {
-            String name = br.readLine();
-            map.put(String.valueOf(i), name);
-            map.put(name, String.valueOf(i));
+        while(l-- > 0) {
+            String s = br.readLine();
+            hs.remove(s);
+            hs.add(s);
         }
 
-        for (int i = 0; i < m; i++) {
-            String s = br.readLine();
-            sb.append(map.get(s)).append("\n");
+        for (String h : hs) {
+            sb.append(h).append("\n");
+            if (--k == 0) break;
         }
 
         bw.write(sb.toString());
+        br.close();
         bw.close();
     }
 }

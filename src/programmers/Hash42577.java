@@ -4,7 +4,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class P42577 {
+/**
+ * https://programmers.co.kr/learn/courses/30/lessons/42577
+ */
+public class Hash42577 {
     public static void main(String[] args) {
 
         String[] s = {"119", "97674223", "1195524421"};
