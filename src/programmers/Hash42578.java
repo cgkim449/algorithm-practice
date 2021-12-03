@@ -24,13 +24,13 @@ public class Hash42578 {
         Map<String, Integer> map = new HashMap<>();
 
         for (String[] clothe : clothes) {
-            map.put(clothe[1], map.getOrDefault(clothe[1], 1) + 1);
+            map.put(clothe[1], map.getOrDefault(clothe[1], 1) + 1); // 안입는거까지 계산할려고 맨 처음에 1을 넣음
         }
 
         for (String key : map.keySet()) {
             answer *= map.get(key);
         }
 
-        return answer - 1;
+        return answer - 1; // 1 빼줌(전부 안입는 경우 하나 빼줘야됨)
     }
 }

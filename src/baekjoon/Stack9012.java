@@ -30,22 +30,22 @@ public class Stack9012 {
             char[] charArray = br.readLine().toCharArray();
 
             for (char c : charArray) {
-                if (c == ')') {
+                if (c == ')') { // ')'를 만나면
                     try {
-                        stack.pop();
-                    } catch (EmptyStackException e) {
-                        sb.append("NO").append("\n");
-                        continue loop;
+                        stack.pop(); // 스택에 제일 위에 있는거 꺼내본다
+                    } catch (EmptyStackException e) { // 스택이 비어있으면
+                        sb.append("NO").append("\n"); // NO 출력
+                        continue loop; // 다시 맨처음으로
                     }
-                } else {
+                } else { // '('는 무조건 스택에 넣는다
                     stack.push(c);
                 }
             }
 
-            if(!stack.isEmpty()) {
-                sb.append("NO").append("\n");
+            if(!stack.isEmpty()) { // 위 작업이 다 끝났는데 스택이 비어있지 않으면
+                sb.append("NO").append("\n"); // NO 출력
             } else {
-                sb.append("YES").append("\n");
+                sb.append("YES").append("\n"); // 비어있으면 YES 출력
             }
         }
 
