@@ -1,7 +1,11 @@
 package programmers.devMatching2nd2021;
 
 class P1 {
-    public int solution(String[] drum) {
+    public static void main(String[] args) {
+        String[] drum = {"######", ">#*###", "####*#", "#<#>>#", ">#*#*<", "######"};
+        System.out.println(solution(drum));
+    }
+    static public int solution(String[] drum) {
         int answer = 0;
 
         Character[][] squares = new Character[drum.length][drum.length];
