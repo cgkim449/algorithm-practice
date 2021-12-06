@@ -21,13 +21,13 @@ public class Hash42579 {
     }
     static public Integer[] solution(String[] genres, int[] plays) {
 
-        HashMap<String, PriorityQueue<Integer>> playsMap = new HashMap<>(); // key: 장르, value: 고유번호 우선순위 큐(플레이 시간 역순)
+        HashMap<String, PriorityQueue<Integer>> playsMap = new HashMap<>(); // key: 장르, value: 고유번호 우선순위 큐(플레이 시간 내림차순. 플레이 시간 같으면 고유 번호 오름차순)
         HashMap<String, Integer> totalTimeMap = new HashMap<>(); // key: 장르, value: 총 시간
 
         // 맵들을 다 채움
         fillAllMaps(genres, plays, playsMap, totalTimeMap);
 
-        // entrySet을 총 시간의 역순으로 정렬
+        // entrySet을 '총 시간'의 내림차순으로 정렬
         TreeSet<Map.Entry<String, Integer>> entrySet = new TreeSet<>((o1, o2) -> o2.getValue().compareTo(o1.getValue()));
         entrySet.addAll(totalTimeMap.entrySet());
 

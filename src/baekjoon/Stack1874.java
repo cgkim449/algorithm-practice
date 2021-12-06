@@ -23,7 +23,7 @@ public class Stack1874 {
         StringBuilder sb = new StringBuilder();
         Stack<Integer> stack = new Stack<>();
 
-        int i = 0; // 스택에 어디까지 들어갔는지
+        int i = 0; // 스택에 어떤 숫자까지 들어갔는지
         while (n-- > 0) {
             int x = Integer.parseInt(br.readLine());
             if (!stack.isEmpty()) {
