@@ -42,9 +42,9 @@ public class StackQueue42586 {
 
         while(!queue.isEmpty()) {
             int count = 0; // 오늘 배포할 작업 개수
-            
+
             // 1. 처음 한 개 배포
-            
+
             int progress = queue.poll(); // 작업을 하나 꺼낸다
             count++;
             if(queue.isEmpty()) { // 큐에 남은 작업이 없으면 마지막 작업인거니까 걍 배포
@@ -56,7 +56,7 @@ public class StackQueue42586 {
             progress += day * speeds[i];
 
             // 추가로 필요한 날짜 계산해서 날짜를 점프
-            day += (100 - progress) % speeds[i] == 0 ? (100 - progress) / speeds[i] : (100 - progress) / speeds[i] + 1;
+            day += (int)Math.ceil((100 - progress) / (double)speeds[i]);;
 
             // 2. 추가 배포
 

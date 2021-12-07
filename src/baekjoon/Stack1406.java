@@ -43,11 +43,12 @@ public class Stack1406 {
             }
         }
 
-        StringBuilder sb = new StringBuilder();
 
         while(!leftStack.isEmpty()) {
             rightStack.push(leftStack.pop());
         }
+
+        StringBuilder sb = new StringBuilder();
 
         while(!rightStack.isEmpty()) {
             sb.append(rightStack.pop());
