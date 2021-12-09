@@ -26,7 +26,10 @@ public class StackQueue42587 {
             queue.offer(i);
         }
 
-        TreeMap<Integer, Integer> treeMap = new TreeMap<>(); // key : 우선순위, value : 우선순위에 해당하는 애들의 개수
+        TreeMap<Integer, Integer> treeMap = new TreeMap<>(); // key : 우선순위, value : 애들의 개수
+        // 2 2
+        // 1 1
+        // 3 1
         for (int priority : priorities) {
             treeMap.put(priority, treeMap.getOrDefault(priority, 0) + 1);
         }

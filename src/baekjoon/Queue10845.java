@@ -56,10 +56,16 @@ class MyQueue<E> {
     }
 
     public E front() {
+        if(empty()) {
+            return null;
+        }
         return head.data;
     }
 
     public E back() {
+        if(empty()) {
+            return null;
+        }
         return tail.data;
     }
 
