@@ -36,11 +36,8 @@ public class Queue1158 {
         for (int i = 1; !queue.isEmpty(); i++) {
             int x = queue.poll();
             if(i % k == 0) {
-                if(queue.isEmpty()) {
-                    sb.append(x).append(">");
-                } else {
-                    sb.append(x).append(", ");
-                }
+                if (queue.isEmpty())  sb.append(x).append(">");
+                else sb.append(x).append(", ");
             } else {
                 queue.offer(x);
             }
