@@ -26,12 +26,14 @@ public class StackQueue42583 {
         int[][] case2 = {{100}, {100}, {10}};
         int[][] case3 = {{100}, {100}, {10,10,10,10,10,10,10,10,10,10}};
 
-        Iterator<int[]> iterator = Arrays.stream(case3).iterator();
+        Iterator<int[]> iterator = Arrays.stream(case1).iterator();
         System.out.println(solution(iterator.next()[0], iterator.next()[0], iterator.next()));
     }
 
     public static int solution(int bridge_length, int weight, int[] truck_weights) {
         int time = 0;
+        if(truck_weights.length == 1) return time += bridge_length + 1;
+
         ArrayList<Integer> truckList = new ArrayList<>(10000);
         for (int truck : truck_weights) {
             truckList.add(truck);
@@ -51,12 +53,9 @@ public class StackQueue42583 {
             }
 
             if(weight >= truckQueue.peek()) { // 다음 트럭 출발할 수 있는지 검사
-                int x = truckQueue.poll(); // 출발
-                if(truckQueue.isEmpty()) {  // 방금 출발한 트럭이 마지막 트럭이면 break
-                    time += bridge_length;
-                    break;
-                }
+                if(truckQueue.size() == 1) return time += bridge_length;
 
+                int x = truckQueue.poll(); // 출발
                 arrivalTimeQueue.offer(new Truck(x, time + bridge_length)); // 도착 예정 시간 저장
                 weight -= x;
 
