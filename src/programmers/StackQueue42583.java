@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Date: 2021-12-09
@@ -32,32 +35,32 @@ public class StackQueue42583 {
 
     public static int solution(int bridge_length, int weight, int[] truck_weights) {
         int time = 0;
-        if(truck_weights.length == 1) return time += bridge_length + 1;
+        if(truck_weights.length == 1) return time += bridge_length + 1; // 트럭 1개 밖에 없으면 바로 리턴
 
         ArrayList<Integer> truckList = new ArrayList<>(10000);
-        for (int truck : truck_weights) {
-            truckList.add(truck);
-        }
+        for (int truck : truck_weights) truckList.add(truck);
 
         Queue<Integer> truckQueue = new LinkedList<>(truckList); // 트럭 큐
         Queue<Truck> arrivalTimeQueue = new LinkedList<>(); // 도착 예정 시간 큐
         boolean flag = true; // true 면 시간 1초 증가, false 면 시간 점프
 
+        int truck = 0;
         while(!truckQueue.isEmpty()) {
             // true 면 시간 1초 증가, false 면 시간 점프
             time = flag ? ++time : arrivalTimeQueue.peek().time;
 
-            // 현재 시각에 맨 앞 트럭 지금 도착하는지 검사(시간 점프시에는 무조건 true)
+            // 맨 앞 트럭 현재 시각에 도착하는지 검사(시간 점프시에는 무조건 true)
             if(!arrivalTimeQueue.isEmpty() && arrivalTimeQueue.peek().time == time) {
-                weight += arrivalTimeQueue.poll().weight; // 도착한 트럭 무게를 다시 더해줌
+                // 맨 앞 트럭이 다리에서 빠져나감
+                weight += arrivalTimeQueue.poll().weight;
             }
 
-            if(weight >= truckQueue.peek()) { // 다음 트럭 출발할 수 있는지 검사
-                if(truckQueue.size() == 1) return time += bridge_length;
+            truck = truckQueue.peek(); // 다음 트럭
+            if(weight >= truck) { // 출발할 수 있는지 검사
+                if(truckQueue.size() == 1) return time += bridge_length; // 트럭 큐에 남은 트럭이 한 개면 리턴.
 
-                int x = truckQueue.poll(); // 출발
-                arrivalTimeQueue.offer(new Truck(x, time + bridge_length)); // 도착 예정 시간 저장
-                weight -= x;
+                arrivalTimeQueue.offer(new Truck(truckQueue.poll(), time + bridge_length)); // 트럭 출발. 도착 예정 시간 저장.
+                weight -= truck;
 
                 flag = weight >= truckQueue.peek(); // 바로 다음 트럭이 출발할 수 있으면 true, 못하면 false(왜냐면 시간 1증가해야되니까)
             }
