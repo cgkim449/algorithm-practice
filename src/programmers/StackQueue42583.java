@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Date: 2021-12-09
@@ -19,8 +16,8 @@ import java.util.stream.Stream;
  * 이 문제 vs 데브매칭
  * 공통점: 큐에 예상 도착시간 넣어놓고 '최소값' 꺼내서 시간 점프
  * 차이점:
- * 1. 큐 vs 우선순위큐
- * 2. 시간점프 + 1씩 증가 vs 시간점프
+ * 1. 큐 vs 우선순위큐(logN) or 리스트(N)
+ * 2. 시간 점프하는 경우 + 시간점프 못하는 경우(1씩 증가) vs 시간 점프
  */
 public class StackQueue42583 {
     public static void main(String[] args) {
