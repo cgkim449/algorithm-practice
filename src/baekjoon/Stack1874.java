@@ -42,13 +42,10 @@ public class Stack1874 {
                     return;
                 }
                 if (i < x) {
-                    while (true) {
+                    do {
                         stack.push(++i);
                         sb.append("+").append("\n");
-                        if (i == x) {
-                            break;
-                        }
-                    }
+                    } while (i != x);
                     stack.pop();
                     sb.append("-").append("\n");
                 }
@@ -58,13 +55,10 @@ public class Stack1874 {
                     return;
                 }
 
-                while (true) {
+                do {
                     stack.push(++i);
                     sb.append("+").append("\n");
-                    if (i == x) {
-                        break;
-                    }
-                }
+                } while (i != x);
                 stack.pop();
                 sb.append("-").append("\n");
             }

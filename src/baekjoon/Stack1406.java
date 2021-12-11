@@ -33,12 +33,12 @@ public class Stack1406 {
             String s = br.readLine();
             try {
                 switch (s.charAt(0)) {
-                    case 'P' : leftStack.push(s.charAt(2)); break;
-                    case 'L' : rightStack.push(leftStack.pop()); break;
-                    case 'D' : leftStack.push(rightStack.pop()); break;
+                    case 'P' : leftStack.push(s.charAt(2));break;
+                    case 'L' : rightStack.push(leftStack.pop());break;
+                    case 'D' : leftStack.push(rightStack.pop());break;
                     case 'B' : leftStack.pop(); break;
                 }
-            } catch (EmptyStackException e) {
+            } catch (EmptyStackException ignored) {
 
             }
         }

@@ -12,7 +12,7 @@ import java.util.Stack;
 public class StackQueue42584 {
     public static void main(String[] args) {
 
-        int[] prices = {1, 2, 3, 2, 3};
+        int[] prices = {1, 2, 3, 2, 3}; // 0, 1, 2, 3, 4
         System.out.println(Arrays.toString(solution(prices)));
     }
 
