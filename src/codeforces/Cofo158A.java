@@ -13,7 +13,7 @@ import java.util.StringTokenizer;
  * Time: 11:05
  * https://codeforces.com/problemset/problem/158/A
  */
-public class C158A {
+public class Cofo158A {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

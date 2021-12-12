@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
  * Time: 21:34
  * https://codeforces.com/problemset/problem/1/A
  */
-public class C1A {
+public class Cofo1A {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");

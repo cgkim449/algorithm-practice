@@ -12,7 +12,7 @@ import java.io.OutputStreamWriter;
  * Time: 21:18
  * https://codeforces.com/problemset/problem/71/A
  */
-public class C71A {
+public class Cofo71A {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

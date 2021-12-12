@@ -1,6 +1,5 @@
 package codeforces;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
@@ -8,7 +7,7 @@ import java.util.Scanner;
  * Date: 2021-12-10
  * Time: 02:45
  */
-public class C339A {
+public class Cofo339A {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
