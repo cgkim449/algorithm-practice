@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
  * Time: 20:03
  * https://programmers.co.kr/learn/courses/30/lessons/42626
  */
-public class Heap42626 {
+public class Heap42626_더_맵게 {
     public static void main(String[] args) {
         int[] scoville = {1, 2, 3, 9, 10, 12};
         int K = 7;
@@ -43,11 +43,15 @@ public class Heap42626 {
         return count;
     }
 }
+
 /*
- * 테스트 1 〉	통과 (194.10ms, 68.6MB)
- * 테스트 2 〉	통과 (249.46ms, 86.9MB)
- * 테스트 3 〉	통과 (1385.26ms, 124MB)
- * 테스트 4 〉	통과 (117.82ms, 65.2MB)
- * 테스트 5 〉	통과 (1566.65ms, 123MB)
+ * 테스트 1 〉	통과 (136.92ms, 65.6MB)
+ * 테스트 2 〉	통과 (321.94ms, 105MB)
+ * 테스트 3 〉	통과 (1723.71ms, 122MB)
+ * 테스트 4 〉	통과 (110.23ms, 65.6MB)
+ * 테스트 5 〉	통과 (1713.51ms, 126MB)
  */
 
+/*
+ * 최소값 구하는 문제. 근데 이게 왜 최소값이 되는지는 모르겠음.
+ */

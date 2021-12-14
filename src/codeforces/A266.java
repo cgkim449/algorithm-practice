@@ -5,31 +5,35 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Stack;
 
 /**
- * Created by cgkim449
- * Date: 2021-12-03
- * Time: 21:18
- * https://codeforces.com/problemset/problem/71/A
+ * Date: 2021-12-12
+ * Time: 18:32
  */
-public class Cofo71A {
+public class A266 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-        StringBuilder sb = new StringBuilder();
+        Stack<Character> stack = new Stack<>();
 
         int n = Integer.parseInt(br.readLine());
 
-        while(n-- > 0) {
-            String s = br.readLine();
-            if(s.length() > 10) {
-                sb.append(s.charAt(0)).append(s.length() - 2).append(s.charAt(s.length() - 1)).append("\n");
+        char[] charArray = br.readLine().toCharArray();
+
+        int count = 0;
+        for (char c : charArray) {
+            if(stack.isEmpty()) {
+                stack.push(c);
+                continue;
+            }
+            if (stack.peek() == c) {
+                count++;
             } else {
-                sb.append(s).append("\n");
+                stack.push(c);
             }
         }
-        bw.write(sb.toString());
+        bw.write(String.valueOf(count));
         bw.close();
         br.close();
     }

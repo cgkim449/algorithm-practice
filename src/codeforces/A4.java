@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
  * Time: 21:00
  * https://codeforces.com/problemset/problem/4/A
  */
-public class Cofo4A {
+public class A4 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

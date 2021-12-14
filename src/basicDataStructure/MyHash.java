@@ -1,32 +1,31 @@
 package basicDataStructure;
 
 /**
- * Created by cgkim449
- * Date: 2021-12-06
- * Time: 00:06
+ * Date: 2021-12-13
+ * Time: 12:31
  */
 public class MyHash {
-    public Slot[] hashTable;
+    public Slot[] hashTable; // Entry[]
 
     public MyHash(Integer size) {
-        hashTable = new Slot[size];
+        this.hashTable = new Slot[size];
     }
 
-    public class Slot {
+    public class Slot{
         String value;
         Slot(String value) {
-            value = value;
+            this.value = value;
         }
     }
 
     public int hashFunc(String key) {
-        return (int)(key.charAt(0)) % hashTable.length;
+        return (int)(key.charAt(0)) % this.hashTable.length;
     }
 
     public boolean saveData(String key, String value) {
-        Integer address = hashFunc(key);
-        if(hashTable[address]!=null){
-            hashTable[address].value = value;
+        Integer address = this.hashFunc(key);
+        if(this.hashTable[address] != null) {
+            hashTable[address].value = value; // put은 덮어쓴다
         } else {
             hashTable[address] = new Slot(value);
         }
@@ -34,7 +33,7 @@ public class MyHash {
     }
 
     public String getData(String key) {
-        Integer address = this.hashFunc(key);
+        Integer address = hashFunc(key);
         if(hashTable[address] != null) {
             return hashTable[address].value;
         } else {
@@ -43,6 +42,6 @@ public class MyHash {
     }
 
     public static void main(String[] args) {
-        MyHash mainObject = new MyHash(20);
+        MyHash myHash = new MyHash(20);
     }
 }

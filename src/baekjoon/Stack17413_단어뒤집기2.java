@@ -12,7 +12,7 @@ import java.util.Stack;
  * Time: 19:42
  * https://www.acmicpc.net/problem/17413
  */
-public class Stack17413 {
+public class Stack17413_단어뒤집기2 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -62,3 +62,7 @@ public class Stack17413 {
         br.close();
     }
 }
+
+/*
+ * 단순히 뒤집는 문제
+ */

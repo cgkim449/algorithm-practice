@@ -1,7 +1,6 @@
 package basicDataStructure;
 
 /**
- * Created by cgkim449
  * Date: 2021-12-05
  * Time: 21:09
  */

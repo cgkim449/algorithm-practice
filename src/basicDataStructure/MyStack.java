@@ -3,7 +3,6 @@ package basicDataStructure;
 import java.util.ArrayList;
 
 /**
- * Created by cgkim449
  * Date: 2021-12-05
  * Time: 19:20
  */

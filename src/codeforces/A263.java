@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
  * Date: 2021-12-08
  * Time: 10:23
  */
-public class Cofo263A {
+public class A263 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Time: 23:27
  * https://codeforces.com/problemset/problem/282/A
  */
-public class Cofo282A {
+public class A282 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = Integer.parseInt(sc.nextLine());

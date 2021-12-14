@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Date: 2021-12-13
  * Time: 10:01
  */
-public class Cofo236A {
+public class A236 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
