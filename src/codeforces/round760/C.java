@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
  * Date: 2021-12-14
  * Time: 23:13
  */
-public class C {
+public class C { // 틀림
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
