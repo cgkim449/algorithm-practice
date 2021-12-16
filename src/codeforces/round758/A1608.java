@@ -10,7 +10,7 @@ import java.io.OutputStreamWriter;
  * Date: 2021-12-11
  * Time: 19:04
  */
-public class A {
+public class A1608 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
