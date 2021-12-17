@@ -41,8 +41,7 @@ public class Stack17299_오등큰수 {
                 continue;
             }
             while(counting[sequence[stack.peek()]] < counting[sequence[j]]) { // 찾았다
-                // 오등큰수저장
-                NGF[stack.peek()] = sequence[j];
+                NGF[stack.peek()] = sequence[j]; // 찾은 오등큰수 저장
                 stack.pop();
                 if(stack.isEmpty()) {
                     break;
