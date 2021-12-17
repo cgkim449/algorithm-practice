@@ -12,8 +12,12 @@ public class Sort42746_가장큰수 {
     public static void main(String[] args) {
 
         int[] numbers1 = {0, 0, 0, 0};
+        int[] test = new int[1001];
+        for (int i = 0; i < test.length; i++) {
+            test[i] = i;
+        }
 
-        System.out.println(solution(numbers1));
+        System.out.println(solution(test));
     }
     public static String solution(int[] numbers) {
         boolean zero = true;
@@ -30,15 +34,16 @@ public class Sort42746_가장큰수 {
             return "0";
         }
 
-        Collections.sort(arrayList, (o1, o2) -> {
-            int x = Integer.parseInt(o1 + String.valueOf(o2));
-            int y = Integer.parseInt(o2 + String.valueOf(o1));
+        Collections.sort(arrayList, (o1, o2) -> { // 3, 30
+            int x = Integer.parseInt(o1 + String.valueOf(o2)); // 330
+            int y = Integer.parseInt(o2 + String.valueOf(o1)); // 303
+            // 330 > 303 -> o1 > o2
             return Integer.compare(y, x);
         });
 
         StringBuilder sb = new StringBuilder();
         for (int n : arrayList) {
-            sb.append(n);
+            sb.append(n).append("\n");
         }
 
         return sb.toString();

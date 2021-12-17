@@ -7,8 +7,11 @@ import java.util.Scanner;
  * Time: 18:17
  * https://www.acmicpc.net/problem/2747
  */
-public class DP2747 {
+public class DP10870_피보나치수5 {
     public static int f(int n) {
+        if(n<=1) {
+            return n;
+        }
         int[] cache = new int[n+1];
         cache[0] = 0;
         cache[1] = 1;
