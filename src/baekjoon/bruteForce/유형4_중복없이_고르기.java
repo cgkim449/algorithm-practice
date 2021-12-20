@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 /**
  * Date: 2021-12-20
  * Time: 17:43
+ * https://www.acmicpc.net/problem/15650
  */
 public class 유형4_중복없이_고르기 {
     private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -29,11 +30,11 @@ public class 유형4_중복없이_고르기 {
 
     public static void main(String[] args) throws IOException {
         input();
-        recurFunc(1);
+        recFunc(1);
         output();
     }
 
-    private static void recurFunc(int k) {
+    private static void recFunc(int k) {
         if(k == M+1) {
             for (int i = 1; i <= M; i++) {
                 sb.append(selected[i]).append(' ');
@@ -44,7 +45,7 @@ public class 유형4_중복없이_고르기 {
         int start = selected[k-1]+1;
         for (int i = start; i <= N; i++) {
             selected[k] = i;
-            recurFunc(k+1);
+            recFunc(k+1);
             selected[k] = 0;
         }
     }
@@ -56,11 +57,20 @@ public class 유형4_중복없이_고르기 {
     }
 }
 
-/*
- * 유형1에서 좀만 바꾸면된다
- */
-
-/*
- * 시간복잡도: O(nCm)
- * 공간복잡도: O(M)
+/* ## 총정리
+ * 완전 탐색 문제를 접근할 때는,
+ * - 고를 수 있는 값의 종류 파악하기
+ * - 중복을 허용하는지, 순서가 중요한지 에따라 4유형으로 나뉨
+ *
+ * 시간복잡도는 차례대로
+ * 1. O(n^m)
+ * 2. O(nPm)
+ * 3. O(n^m) 보단 작음
+ * 4. O(nCm)
+ *
+ * 공간복잡도는 전부
+ * O(m)
+ * 
+ * 4유형 모두 사람이 접근하는 방법으로 풀었고,
+ * 모두 유형1의 코드에서 조금만 바꾸면 되는 코드들임
  */

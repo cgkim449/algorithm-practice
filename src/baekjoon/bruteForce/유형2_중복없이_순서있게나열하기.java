@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.HashMap;
 import java.util.StringTokenizer;
 
 /**
@@ -21,8 +20,7 @@ public class 유형2_중복없이_순서있게나열하기 {
 
     static int N, M;
     static int[] selected;
-
-    static HashMap<Integer, Boolean> jumpMap = new HashMap<>();
+    static int[] used;
 
     private static void input() throws IOException {
         st = new StringTokenizer(br.readLine(), " ");
@@ -30,13 +28,12 @@ public class 유형2_중복없이_순서있게나열하기 {
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
         selected = new int[M+1];
+        used = new int[N+1];
     }
 
     public static void main(String[] args) throws IOException {
         input();
-
         recFunc(1);
-
         output();
     }
 
@@ -50,14 +47,12 @@ public class 유형2_중복없이_순서있게나열하기 {
             return;
         }
         for (int cand = 1; cand <= N; cand++) {
-            if(jumpMap.containsKey(cand) && jumpMap.get(cand)) {
-                continue;
-            }
+            if(used[cand] == 1) continue;
             selected[k] = cand;
-            jumpMap.put(cand, true);
+            used[cand] = 1;
             recFunc(k+1);
             selected[k] = 0;
-            jumpMap.put(cand, false);
+            used[cand] = 0;
         }
     }
 
@@ -67,11 +62,3 @@ public class 유형2_중복없이_순서있게나열하기 {
         br.close();
     }
 }
-/*
- * > 유형1에서 코드를 좀만 바꾸면됨
- */
-
-/*
- * 시간복잡도: O(nPm) -> O(n!)(최악의 경우)
- * 공간복잡도: O(M)
- */

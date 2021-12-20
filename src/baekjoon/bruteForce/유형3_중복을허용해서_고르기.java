@@ -5,13 +5,12 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.StringTokenizer;
 
 /**
  * Date: 2021-12-20
  * Time: 15:33
+ * https://www.acmicpc.net/problem/15652
  */
 public class 유형3_중복을허용해서_고르기 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -61,13 +60,3 @@ public class 유형3_중복을허용해서_고르기 {
         br.close();
     }
 }
-/*
- * > 유형1에서 코드를 좀만 바꾸면됨
- * > 완전?탐색은 사람이 접근하는 방법으로 풀어야한다
- */
-
-/*
- * 시간복잡도: O(N^M)보단 훨씬 작음 걍 O(N^M)이라고 함
- * 공간복잡도: O(M)
- *
- */
