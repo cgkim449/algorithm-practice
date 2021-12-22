@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
 /**
  * Date: 2021-12-22
  * Time: 12:08
- * https://programmers.co.kr/learn/courses/30/lessons/42839
+ * https://www.acmicpc.net/problem/10809
  */
 public class B10809_알파벳_찾기 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
