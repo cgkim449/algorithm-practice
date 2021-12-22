@@ -18,12 +18,12 @@ public class Hash1302 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        HashMap<String,Integer> hashMap = new HashMap<>();
 
         StringBuilder sb = new StringBuilder();
 
         int n = Integer.parseInt(br.readLine());
 
-        HashMap<String,Integer> hashMap = new HashMap<>();
 
         while(n-- > 0) {
             String bookTitle = br.readLine();

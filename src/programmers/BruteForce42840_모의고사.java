@@ -54,6 +54,7 @@ public class BruteForce42840_모의고사 {
         if(max ==sum3) {
             pq.offer(3);
         }
+
         Integer[] temp = new Integer[0];
         return pq.toArray(temp);
     }
