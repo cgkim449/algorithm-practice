@@ -30,17 +30,17 @@ public class BruteForce42842_카펫 {
         case1 = new int[]{10,2};
         case2 = new int[]{8,1};
         case3 = new int[]{24,24};
-        answer = new int[2];
     }
 
     public static void main(String[] args) throws IOException {
         input();
-        System.out.println(Arrays.toString(solution(case3[0], case3[1])));
+        System.out.println(Arrays.toString(solution(case2[0], case2[1])));
         output();
     }
 
 
     public static int[] solution(int brown, int yellow) {
+        answer = new int[2];
         if(yellow == 1) {
             answer[0] = 3;
             answer[1] = 3;
@@ -51,10 +51,12 @@ public class BruteForce42842_카펫 {
             answer[1] = 3;
             return answer;
         }
-        counting = new int[yellow+1];
+
+        counting = new int[yellow+1]; // [0,0,3,1,0,0,....]
         selected = new int[yellow+1];
 
-        factorization(yellow);
+        factorization(yellow); // 24   2 2 2 3
+
         for (int M = 1; M <= total / 2; M++) {
             recFunc(1, M, brown, yellow);
         }
@@ -76,7 +78,14 @@ public class BruteForce42842_카펫 {
         } else {
             int start = selected[k-1];
             if(start == 0) start = 2;
-            for (int candidate = start; candidate <= yellow; candidate++) {
+            for (int candidate = start; candidate <= yellow; candidate++) { // 2 2 2 3
+                // 2
+                // 3
+                // 2 2
+                // 2 3
+                // 3 2
+                // 2 2 2
+                // 2 2 3
                 if(counting[candidate] == 0) {
                     continue;
                 }
