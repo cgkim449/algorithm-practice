@@ -78,14 +78,7 @@ public class BruteForce42842_카펫 {
         } else {
             int start = selected[k-1];
             if(start == 0) start = 2;
-            for (int candidate = start; candidate <= yellow; candidate++) { // 2 2 2 3
-                // 2
-                // 3
-                // 2 2
-                // 2 3
-                // 3 2
-                // 2 2 2
-                // 2 2 3
+            for (int candidate = start; candidate <= yellow; candidate++) {
                 if(counting[candidate] == 0) {
                     continue;
                 }

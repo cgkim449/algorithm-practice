@@ -43,6 +43,6 @@ public class Greedy42862_체육복 {
             }
         }
 
-        return n - count;
+        return n- count;
     }
 }
