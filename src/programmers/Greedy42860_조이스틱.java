@@ -10,7 +10,7 @@ public class Greedy42860_조이스틱 {
         System.out.println(solution("JEROEN")); // 012345
         System.out.println(solution("JAN"));
         System.out.println(solution("JAZ"));
-        System.out.println(solution("BAABB"));// 1 11 11
+        System.out.println(solution("AAAAA"));// 3 > 1
     }
     public static int solution(String name) {
         int count = 0;
@@ -27,12 +27,13 @@ public class Greedy42860_조이스틱 {
 
             charArr[cursor]='A';
 
-            // 'A'가 아닌 인덱스 중 가장 가까운 인덱스 검색
-            int minFrontMove = 0;
-            int minBackMove = 0;
+            // 'A'가 아닌 요소 중 가장 가까운 요소를 구하자
             int nearestFrontIndex = cursor;
+            int minFrontMove = 0;
+
             int nearestBackIndex = cursor;
-    
+            int minBackMove = 0;
+
             // 앞으로 검색
             loop:
             while (true) {
@@ -80,15 +81,15 @@ public class Greedy42860_조이스틱 {
                 return count;
             }
 
-            int shortest = minFrontMove;
+            int minMove = minFrontMove;
             cursor = nearestFrontIndex;
 
             if(minFrontMove > minBackMove){
-                shortest = minBackMove;
+                minMove = minBackMove;
                 cursor= nearestBackIndex;
             }
 
-            count+=shortest; // 커서 이동
+            count+= minMove; // 커서 이동
         }
     }
 }

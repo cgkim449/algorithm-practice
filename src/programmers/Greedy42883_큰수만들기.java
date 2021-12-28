@@ -6,7 +6,7 @@ package programmers;
  */
 public class Greedy42883_큰수만들기 {
     public static void main(String[] args){
-        System.out.println(solution("21", 1));
+        System.out.println(solution("21", 1)); // 7752841  4
     }
     public static String solution(String number, int k) {
         StringBuilder sb = new StringBuilder();
