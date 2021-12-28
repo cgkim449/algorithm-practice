@@ -27,28 +27,28 @@ public class Greedy42860_조이스틱 {
 
             charArr[cursor]='A';
 
-            // 가장 가까운 인덱스 검색
-            int front = 0;
-            int back = 0;
-            int frontTemp = cursor;
-            int backTemp = cursor;
+            // 'A'가 아닌 인덱스 중 가장 가까운 인덱스 검색
+            int shortestFront = 0;
+            int shortestBack = 0;
+            int shortestFrontIndex = cursor;
+            int shortestBackIndex = cursor;
     
             // 앞으로 검색
             loop:
             while (true) {
-                for (int i = frontTemp; i <= charArr.length-1; i++) {
+                for (int i = shortestFrontIndex; i <= charArr.length-1; i++) {
                     char c = charArr[i];
                     if(c!='A'){
-                        front=i-frontTemp;
-                        frontTemp=i;
+                        shortestFront =i- shortestFrontIndex;
+                        shortestFrontIndex =i;
                         break loop;
                     }
                 }
-                for (int i = 0; i < frontTemp; i++) {
+                for (int i = 0; i < shortestFrontIndex; i++) {
                     char c = charArr[i];
                     if(c!='A'){
-                        front=charArr.length-1-frontTemp+1+i;
-                        frontTemp=i;
+                        shortestFront =charArr.length-1- shortestFrontIndex +1+i;
+                        shortestFrontIndex =i;
                         break loop;
                     }
                 }
@@ -59,19 +59,19 @@ public class Greedy42860_조이스틱 {
             // 뒤로 검색
             loop:
             while (true) {
-                for (int i = backTemp; i >=0; i--) {
+                for (int i = shortestBackIndex; i >=0; i--) {
                     char c = charArr[i];
                     if(c!='A'){
-                        back=backTemp-i;
-                        backTemp=i;
+                        shortestBack = shortestBackIndex -i;
+                        shortestBackIndex =i;
                         break loop;
                     }
                 }
-                for (int i = charArr.length-1; i >=backTemp; i--) {
+                for (int i = charArr.length-1; i >= shortestBackIndex; i--) {
                     char c = charArr[i];
                     if(c!='A'){
-                        back=backTemp+1+charArr.length-1-i;
-                        backTemp=i;
+                        shortestBack = shortestBackIndex +1+charArr.length-1-i;
+                        shortestBackIndex =i;
                         break loop;
                     }
                 }
@@ -80,12 +80,14 @@ public class Greedy42860_조이스틱 {
                 return count;
             }
 
-            int shortest = front;
-            cursor = frontTemp;
-            if(front>back){
-                shortest =back;
-                cursor=backTemp;
+            int shortest = shortestFront;
+            cursor = shortestFrontIndex;
+
+            if(shortestFront > shortestBack){
+                shortest = shortestBack;
+                cursor= shortestBackIndex;
             }
+
             count+=shortest; // 커서 이동
         }
     }
