@@ -29,11 +29,11 @@ public class Greedy42885_구명보트 {
 
         while (true) {
             if(deque.isEmpty()) return count;
-            
+
             int x = deque.pollLast();
             count++;
 
-            if(deque.isEmpty())  return count;
+            if(deque.isEmpty()) return count;
 
             int y = deque.peekFirst();
             if(limit >= x + y) deque.pollFirst();
