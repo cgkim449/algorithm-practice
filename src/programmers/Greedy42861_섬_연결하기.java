@@ -1,8 +1,8 @@
 package programmers;
 
-import java.util.Collections;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
-import java.util.ArrayList;
 
 /**
  * Date: 2021-12-30
@@ -29,43 +29,25 @@ public class Greedy42861_섬_연결하기 {
     static HashMap<Integer, Integer> rank = new HashMap<>(); // 모든 노드의 랭크 정보
     
     static public int solution(int n, int[][] costs) {
-        int answer = 0;
-
-        ArrayList<Integer> vertices = new ArrayList<>(); // 모든 노드(그냥 String)
-        for (int i = 0; i <= n-1; i++) {
-            vertices.add(i);
-        }
-
-        ArrayList<Edge> edges = new ArrayList<>(); // 모든 간선(Edge 객체. 노드 2개랑 가중치 정보있음)
-        for (int[] cost : costs) {
-            edges.add(new Edge(cost[2], cost[0], cost[1]));
-        }
+        int total = 0;
 
         // 1. 초기화
-        for (int vertex : vertices) {
-            makeSet(vertex);
+        for (int i = 0; i <= n-1; i++) {
+            makeSet(i);
         }
 
         // 가중치 오름차순
-        Collections.sort(edges);
+        Arrays.sort(costs, Comparator.comparingInt(o -> o[2]));
 
-        ArrayList<Edge> mst = new ArrayList<>(); // 완성할 최소 신장 트리
-        Edge currentEdge; // 꺼낼 간선
-        
         // 2. 그리디
-        for (Edge value : edges) {
-            currentEdge = value; // 간선을 꺼내서
-            if (find(currentEdge.nodeV) != find(currentEdge.nodeU)) { // 간선의 두 노드의 루트 노드가 같지 않으면
-                union(currentEdge.nodeV, currentEdge.nodeU); // 두 노드를 이어줘
-                mst.add(currentEdge); // 최소 신장 트리 리스트에 간선을 넣는다
+        for (int[] cost : costs) {
+            if (find(cost[0]) != find(cost[1])) { // 간선의 두 노드의 루트 노드가 같지 않으면
+                union(cost[0], cost[1]); // 두 노드를 이어줘
+                total += cost[2];
             }
         }
 
-        for (Edge edge : mst) {
-            answer += edge.weight;
-        }
-
-        return answer;
+        return total;
     }
 
     static public int find(int node) { // 루트 노드 알려줘
@@ -100,26 +82,5 @@ public class Greedy42861_섬_연결하기 {
     static public void makeSet(int node) {
         parent.put(node, node);
         rank.put(node, 0);
-    }
-
-    static class Edge implements Comparable<Edge> {
-        public int weight;
-        public int nodeV;
-        public int nodeU;
-
-        public Edge(int weight, int nodeV, int nodeU) {
-            this.weight = weight;
-            this.nodeV = nodeV;
-            this.nodeU = nodeU;
-        }
-
-        @Override
-        public int compareTo(Edge edge) {
-            return weight - edge.weight;
-        }
-
-        public String toString() {
-            return "(" + weight + ", " + nodeV + ", " + nodeU + ")";
-        }
     }
 }
