@@ -9,7 +9,7 @@ import java.util.TreeMap;
  * Time: 11:59
  * https://programmers.co.kr/learn/courses/30/lessons/42587
  */
-public class StackQueue42587 {
+public class StackQueue42587_프린터 {
     public static void main(String[] args) {
 
         int[][] case1 = {{2, 1, 3, 2}, {2}};

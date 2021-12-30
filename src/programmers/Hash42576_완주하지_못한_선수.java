@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * https://programmers.co.kr/learn/courses/30/lessons/42576
  */
-public class Hash42576 {
+public class Hash42576_완주하지_못한_선수 {
     public static void main(String[] args) {
         String[] participant = {"mislav", "stanko", "mislav", "ana"};
         String[] completion = {"stanko", "ana", "mislav"};

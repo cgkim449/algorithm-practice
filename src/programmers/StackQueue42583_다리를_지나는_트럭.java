@@ -19,7 +19,7 @@ import java.util.Queue;
  * 1. 큐 vs 우선순위큐(logN) or 리스트(N)
  * 2. 시간 점프하는 경우 + 시간점프 못하는 경우(1씩 증가) vs 시간 점프
  */
-public class StackQueue42583 {
+public class StackQueue42583_다리를_지나는_트럭 {
     public static void main(String[] args) {
 
         int[][] case1 = {{2}, {10}, {7,4,5,6}};
@@ -64,14 +64,14 @@ public class StackQueue42583 {
         }
         return time;
     }
-}
+    static class Truck {
+        int weight;
+        int time;
 
-class Truck {
-    int weight;
-    int time;
-
-    public Truck(int weight, int time) {
-        this.weight = weight;
-        this.time = time;
+        public Truck(int weight, int time) {
+            this.weight = weight;
+            this.time = time;
+        }
     }
 }
+

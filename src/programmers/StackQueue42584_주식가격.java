@@ -9,7 +9,7 @@ import java.util.Stack;
  * https://programmers.co.kr/learn/courses/30/lessons/42584
  */
 
-public class StackQueue42584 {
+public class StackQueue42584_주식가격 {
     public static void main(String[] args) {
 
         int[] prices = {1, 2, 3, 2, 3}; // 0, 1, 2, 3, 4

@@ -13,7 +13,7 @@ import java.util.TreeSet;
  * Time: 13:16
  * https://programmers.co.kr/learn/courses/30/lessons/42579
  */
-public class Hash42579 {
+public class Hash42579_베스트앨범 {
     public static void main(String[] args) {
         String[] genres = {"classic", "pop", "classic", "classic", "pop"};
         int[] plays = {500, 600, 150, 800, 2500};

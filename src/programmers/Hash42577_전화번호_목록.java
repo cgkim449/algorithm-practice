@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * https://programmers.co.kr/learn/courses/30/lessons/42577
  */
-public class Hash42577 {
+public class Hash42577_전화번호_목록 {
     public static void main(String[] args) {
 
         String[] s = {"119", "97674223", "1195524421"};

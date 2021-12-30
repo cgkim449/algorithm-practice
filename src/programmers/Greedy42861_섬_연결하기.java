@@ -20,41 +20,15 @@ public class Greedy42861_섬_연결하기 {
     static HashMap<String, String> parent = new HashMap<>();
     static HashMap<String, Integer> rank = new HashMap<>();
     
-    static public String find(String node) {
-        // path compresion 기법
-        if (parent.get(node) != node) {
-            parent.put(node, find(parent.get(node)));
-        }
-        return parent.get(node);
-    }
-    
-    static public void union(String nodeV, String nodeU) {
-        String root1 = find(nodeV);
-        String root2 = find(nodeU);
-        
-        // union-by-rank 기법
-        if (rank.get(root1) > rank.get(root2)) {
-            parent.put(root2, root1);
-        } else {
-            parent.put(root1, root2);
-            if (rank.get(root1) == rank.get(root2)) {
-                rank.put(root2, rank.get(root2) + 1);
-            }
-        }
-    }
-
-    static public void makeSet(String node) {
-        parent.put(node, node);
-        rank.put(node, 0);
-    }
-
     static public int solution(int n, int[][] costs) {
         int answer = 0;
-        ArrayList<String> vertices = new ArrayList<>();
+
+        ArrayList<String> vertices = new ArrayList<>(); // 노드
         for (int i = 0; i <= n-1; i++) {
             vertices.add(""+i);
         }
-        ArrayList<Edge> edges = new ArrayList<>();
+
+        ArrayList<Edge> edges = new ArrayList<>(); // 간선
         for (int[] cost : costs) {
             edges.add(new Edge(cost[2], cost[0] + "", cost[1] + ""));
         }
@@ -82,6 +56,34 @@ public class Greedy42861_섬_연결하기 {
         }
 
         return answer;
+    }
+
+    static public String find(String node) {
+        // path compresion 기법
+        if (parent.get(node) != node) {
+            parent.put(node, find(parent.get(node)));
+        }
+        return parent.get(node);
+    }
+
+    static public void union(String nodeV, String nodeU) {
+        String root1 = find(nodeV);
+        String root2 = find(nodeU);
+
+        // union-by-rank 기법
+        if (rank.get(root1) > rank.get(root2)) {
+            parent.put(root2, root1);
+        } else {
+            parent.put(root1, root2);
+            if (rank.get(root1) == rank.get(root2)) {
+                rank.put(root2, rank.get(root2) + 1);
+            }
+        }
+    }
+
+    static public void makeSet(String node) {
+        parent.put(node, node);
+        rank.put(node, 0);
     }
 
     static class Edge implements Comparable<Edge> {

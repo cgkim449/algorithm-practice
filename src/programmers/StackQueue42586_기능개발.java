@@ -13,7 +13,7 @@ import java.util.Queue;
 
 // 1. 1일마다 시뮬x (첫 배포 때마다 날짜 계산해서 날짜 점프)
 // 2. 날짜 점프하고 나서 순회x (peek 할때마다 (날짜 * 스피드)를 더해줘서 오늘 배포할 수 있는지 검사)
-public class StackQueue42586 {
+public class StackQueue42586_기능개발 {
     public static void main(String[] args) {
 
         int[] progresses1 = {93, 30, 55};
