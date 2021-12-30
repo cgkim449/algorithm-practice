@@ -1,6 +1,8 @@
 package programmers;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 
@@ -11,12 +13,13 @@ import java.util.HashMap;
  */
 
 /*
- * 1. 초기화
- * 2.1 union : 유니온은 서로소인 부분집합들(트리)을 관리하다가, 가중치 제일 작은(그리디) 간선부터 연결한다. 간선을 연결한다는 것은 두 트리를 하나의 트리로 합친다는것(유니온).
- *      + union by rank(union 방법) : find의 시간복잡도를 O(N)에서 O(logN)으로 줄여줌(logN의 높이를 가지게 되므로. find 할때(루트노드를 찾을 때) 결국 이 높이만큼 체크를 하는 거기때문에.) 최악의 경우는 O(N)이다(트리가 링크드리스트처럼 일렬로 만들어졌을 경우)
- * 2.2 find : 단 사이클이 생기면 그 간선은 탈락. 간선을 연결할 두 노드의 '루트' 노드가 같은지만 판단하면됨. 트리로 관리하기 때문에 루트 노드가 존재하는 것.
- *      + path compression(find 실행시 동작) : find의 시간복잡도를 O(logN)에서 O(1)로 줄여줌(높이를 전부 1차이로 만들어주므로. 물론 맨처음엔 logN이다. 맨처음엔 path compression 안하므로.)
- * 3. 모든 노드가 연결되면 리턴.
+ * 1. union-find 쓰기 위한 초기화. union-find는 find 메소드를 통해 서로소 집합을 유지한다.
+ * 2.1 union: 두 트리를 하나의 트리로 합치는 메서드(간선을 연결함으로써). 단 사이클이 생기면 그 간선은 탈락해야한다(find 메서드 이용)
+ *     - union by rank: union의 기법 중 하나. union 후 최악의 경우 깊이가 N이 되는데, 이를 logN으로 줄여준다. 즉, find의 시간복잡도를 O(N)에서 O(logN)으로 줄여줌.
+ * 2.2 find: 노드의 루트 노드를 알려주는 메서드(루트 노드가 같다면 사이클이 생긴다는 것이다)
+ *     - path compression: find 실행시 동작하는 기법. 루트노드와 나머지 노드의 랭크 차이를 전부 1로 만들어준다. 따라서 find의 시간복잡도를 O(logN)에서 O(1)로 줄여줌
+ *                         (물론 union할땐 patch compression이 동작하지 않으므로 맨처음 find는 logN이다.)
+ * 3. '모든 노드가 연결되면' 리턴.
  */
 public class Greedy42861_섬_연결하기 {
     public static void main(String[] args) {
@@ -31,7 +34,7 @@ public class Greedy42861_섬_연결하기 {
     static public int solution(int n, int[][] costs) {
         int total = 0;
 
-        // 1. 초기화
+        // 1. union-find 쓰기 위한 초기화
         for (int i = 0; i <= n-1; i++) {
             makeSet(i);
         }
@@ -41,8 +44,8 @@ public class Greedy42861_섬_연결하기 {
 
         // 2. 그리디
         for (int[] cost : costs) {
-            if (find(cost[0]) != find(cost[1])) { // 간선의 두 노드의 루트 노드가 같지 않으면
-                union(cost[0], cost[1]); // 두 노드를 이어줘
+            if (find(cost[0]) != find(cost[1])) {
+                union(cost[0], cost[1]);
                 total += cost[2];
             }
         }
@@ -50,19 +53,15 @@ public class Greedy42861_섬_연결하기 {
         return total;
     }
 
-    static public int find(int node) { // 루트 노드 알려줘
+    static public int find(int node) {
         // path compression 기법
         if (parent.get(node) != node) {
             parent.put(node, find(parent.get(node)));
         }
-        // path compression 안쓰는 경우. 걍 재귀만 하면 됨
-//        if (parent.get(node) != node) {
-//            return find(parent.get(node));
-//        }
         return parent.get(node);
     }
 
-    static public void union(int nodeV, int nodeU) { // 두 노드를 이어줘
+    static public void union(int nodeV, int nodeU) {
         int root1 = find(nodeV);
         int root2 = find(nodeU);
 
