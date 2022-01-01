@@ -32,6 +32,8 @@ public class Math2581_소수 {
                 }
             }
         }
+
+
         int min = 0;
         int sum = 0;
         boolean minmin = false;
