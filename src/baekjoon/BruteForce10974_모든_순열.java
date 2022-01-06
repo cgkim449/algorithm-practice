@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
  * Date: 2022-01-04
  * Time: 10:40
  */
-public class BruteForce10974_순열 {
+public class BruteForce10974_모든_순열 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static StringBuilder sb = new StringBuilder();
@@ -25,7 +25,7 @@ public class BruteForce10974_순열 {
         visited = new int[n+1];
 
         go(1);
-        
+
         output();
     }
 
