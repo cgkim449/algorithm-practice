@@ -1,4 +1,4 @@
-package cgkim449;
+package javachobo;
 
 import java.util.HashMap;
 
@@ -6,7 +6,7 @@ import java.util.HashMap;
  * Date: 2021-12-07
  * Time: 20:19
  */
-public class ContainsKeyVsGet {
+class ContainsKeyVsGet {
     public static void main(String[] args) {
         HashMap<String, HashMap<String, Integer>> hashMap = new HashMap<>();
         if(hashMap.containsKey("a")) {

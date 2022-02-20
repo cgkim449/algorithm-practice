@@ -11,6 +11,7 @@ public class Main {
     static StringBuilder sb = new StringBuilder();
     static StringTokenizer st;
     public static void main(String[] args) throws IOException {
+        sb.append("hemlo");
         output();
     }
 

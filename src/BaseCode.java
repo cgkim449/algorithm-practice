@@ -6,11 +6,17 @@ import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class BaseCode {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    static StringBuilder sb = new StringBuilder();
-    static StringTokenizer st;
+    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    private static StringBuilder sb = new StringBuilder();
+    private static StringTokenizer st;
+
+    private static void input() throws IOException {
+
+    }
+
     public static void main(String[] args) throws IOException {
+        input();
         output();
     }
 
