@@ -11,12 +11,8 @@ public class BaseCode {
     private static StringBuilder sb = new StringBuilder();
     private static StringTokenizer st;
 
-    private static void input() throws IOException {
-
-    }
-
     public static void main(String[] args) throws IOException {
-        input();
+        Object o = new Object();
         output();
     }
 
