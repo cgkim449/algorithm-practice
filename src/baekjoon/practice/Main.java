@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -15,7 +14,7 @@ public class Main {
     private static StringTokenizer st;
 
     public static void main(String[] args) throws IOException {
-
+        System.out.println("oioi");
         output();
     }
 

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-class Hash3 {
+class Hash4 {
     public static void main(String[] args) {
 
     }
