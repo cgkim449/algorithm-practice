@@ -12,10 +12,16 @@ import java.util.StringTokenizer;
  */
 
 public class 유형4 {
-    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    private static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     private static StringBuilder sb = new StringBuilder();
     private static StringTokenizer st;
+
+    public static void main(String[] args) throws IOException {
+        input();
+        service();
+        output();
+    }
 
     private static int N, M;
     private static int[] selected;
@@ -24,27 +30,24 @@ public class 유형4 {
         st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        selected = new int[M+1];
+        selected = new int[M + 1];
     }
 
-    public static void main(String[] args) throws IOException {
-        input();
-        recFunc(1);
-        output();
+    private static void service() {
+        recurrenceFunction(1);
     }
 
-    private static void recFunc(int k) {
-        if(k==M+1) {
-            for (int i = 1; i < selected.length; i++) {
+    private static void recurrenceFunction(int k) {
+        if(k == M + 1) {
+            for (int i = 1; i <= M; i++) {
                 sb.append(selected[i]).append(' ');
             }
             sb.append('\n');
         } else {
-            int start = selected[k-1]+1;
-            for (int cand = start; cand <= N; cand++) {
-                selected[k] = cand;
-                recFunc(k+1);
-                selected[k] = 0;
+            int start = selected[k - 1] + 1;
+            for (int candidate = start; candidate <= N; candidate++) {
+                selected[k] = candidate;
+                recurrenceFunction(k + 1);
             }
         }
     }

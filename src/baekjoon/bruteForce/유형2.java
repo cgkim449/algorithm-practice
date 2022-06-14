@@ -12,42 +12,48 @@ import java.util.StringTokenizer;
  */
 
 public class 유형2 {
-    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    private static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     private static StringBuilder sb = new StringBuilder();
     private static StringTokenizer st;
 
-    private static int N, M;
-    private static int[] selected, used;
+    public static void main(String[] args) throws IOException {
+        input();
+        service();
+        output();
+    }
 
+    private static int N, M;
+    private static int[] selected;
+    private static int[] used;
     private static void input() throws IOException {
         st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        selected = new int[M+1];
-        used = new int[N+1];
+        selected = new int[M + 1];
+        used = new int[N + 1];
     }
 
-    public static void main(String[] args) throws IOException {
-        input();
-        recFunc(1);
-        output();
+    private static void service() {
+        recurrenceFunction(1);
     }
 
-    private static void recFunc(int k) {
-        if(k==M+1) {
-            for (int i = 1; i < selected.length; i++) {
+    private static void recurrenceFunction(int k) {
+        if(k == M + 1) {
+            for (int i = 1; i <= M; i++) {
                 sb.append(selected[i]).append(' ');
             }
             sb.append('\n');
         } else {
-            for (int cand = 1; cand <= N; cand++) {
-                if(used[cand] == 1) continue;
-                selected[k] = cand;
-                used[cand] = 1;
-                recFunc(k+1);
+            for (int candidate = 1; candidate <= N; candidate++) {
+                if(used[candidate] == 1) {
+                    continue;
+                }
+                selected[k] = candidate;
+                used[candidate] = 1;
+                recurrenceFunction(k + 1);
+                used[candidate] = 0;
                 selected[k] = 0;
-                used[cand] = 0;
             }
         }
     }
